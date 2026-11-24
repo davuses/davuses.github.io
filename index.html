@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en" data-mood="neutral">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Seasonal Tapes — OpenBand Concept Albums</title>
+  <meta name="description" content="Two full-day seasonal concept albums composed in OpenBand: Four O'Clock Coast (Summer) and Kettle & Snowfall (Winter), each with live OpenBand Studio & Web Audio Synth A/B comparison." />
+  <meta property="og:title" content="Seasonal Tapes — Summer & Winter Concept Albums" />
+  <meta property="og:description" content="Explore Four O'Clock Coast (Summer) and Kettle & Snowfall (Winter) — 12 tracks across two full-day arcs." />
+  <meta property="og:image" content="covers/kettle-and-snowfall.jpg" />
+  <meta property="og:type" content="website" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=JetBrains+Mono:wght@400;500&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="ambient-wash" aria-hidden="true"></div>
+
+  <main class="shell">
+    <header class="hub-header">
+      <div class="header-copy">
+        <p class="eyebrow">OPENBAND CONCEPT SERIES · 2 ALBUMS · 12 TRACKS</p>
+        <h1 class="hub-title">Seasonal Tapes</h1>
+        <p class="hub-sub">
+          Two companion full-day concept albums — from sunlit coastal afternoons to snowy twilight cafés.
+          Click any album to open the full interactive player with live OpenBand Studio / Web Audio Synth A/B switching.
+        </p>
+      </div>
+      <div class="header-actions">
+        <button id="shareHubBtn" type="button" class="pill-btn">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="14" height="14">
+            <circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/>
+            <line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/>
+          </svg>
+          <span id="shareHubLabel">Copy Hub Link</span>
+        </button>
+      </div>
+    </header>
+
+    <section class="album-grid" aria-label="Albums">
+      <!-- ALBUM 01: SUMMER -->
+      <article class="album-card" data-album="summer" data-preview="/four-oclock-coast/audio/02_Sea_Breeze_at_Four.mp3" data-preview-title="Sea Breeze at Four">
+        <a href="/four-oclock-coast/" class="cover-link" aria-label="Open Four O'Clock Coast album">
+          <div class="cover-frame">
+            <img src="covers/four-oclock-coast.jpg" alt="Four O'Clock Coast summer album cover" class="cover-img" />
+            <span class="season-pill summer-pill">SUMMER · 01</span>
+            <span class="arc-pill">9 AM → 12 AM</span>
+          </div>
+        </a>
+
+        <div class="card-body">
+          <div class="card-head">
+            <div>
+              <h2 class="card-title"><a href="/four-oclock-coast/">Four O'Clock Coast</a></h2>
+              <p class="card-meta">6 tracks · 12:37 · 76–112 BPM · City-Pop &amp; Coastal Breeze</p>
+            </div>
+          </div>
+
+          <p class="card-desc">
+            One sunlit coastal day in six scenes — crisp morning linen, four o'clock sea breeze, poolside funk-bossa, amber pier sunset, neon cicada dusk, and midnight shoreline.
+          </p>
+
+          <ol class="mini-tracks">
+            <li><a href="/four-oclock-coast/#track=1"><span>01</span> Sunlit Linen (9 AM)<em>96 BPM · D</em></a></li>
+            <li><a href="/four-oclock-coast/#track=2"><span>02</span> Sea Breeze at Four<em>104 BPM · G</em></a></li>
+            <li><a href="/four-oclock-coast/#track=3"><span>03</span> Poolside Citron<em>112 BPM · F</em></a></li>
+            <li><a href="/four-oclock-coast/#track=4"><span>04</span> Amber Pier (6:30 PM)<em>88 BPM · C</em></a></li>
+            <li><a href="/four-oclock-coast/#track=5"><span>05</span> Cicada Dusk (9 PM)<em>92 BPM · Am</em></a></li>
+            <li><a href="/four-oclock-coast/#track=6"><span>06</span> Midnight Tide<em>76 BPM · Eb</em></a></li>
+          </ol>
+
+          <div class="preview-strip">
+            <div class="preview-bar"><div class="preview-fill"></div></div>
+          </div>
+
+          <div class="card-actions">
+            <a href="/four-oclock-coast/" class="btn-open summer-btn">
+              <span>Open Album</span>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" width="15" height="15">
+                <line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/>
+              </svg>
+            </a>
+            <button type="button" class="btn-preview" aria-label="Preview Sea Breeze at Four">
+              <svg class="ic-play" viewBox="0 0 24 24" fill="currentColor" width="14" height="14"><path d="M8 5v14l11-7z"/></svg>
+              <svg class="ic-pause hidden" viewBox="0 0 24 24" fill="currentColor" width="14" height="14"><path d="M6 5h4v14H6zm8 0h4v14h-4z"/></svg>
+              <span class="preview-label">Preview Track 2</span>
+            </button>
+          </div>
+        </div>
+      </article>
+
+      <!-- ALBUM 02: WINTER -->
+      <article class="album-card" data-album="winter" data-preview="/kettle-and-snowfall/audio/04_Kettle_and_Snowfall_5PM.mp3" data-preview-title="Kettle & Snowfall (5 PM)">
+        <a href="/kettle-and-snowfall/" class="cover-link" aria-label="Open Kettle & Snowfall album">
+          <div class="cover-frame">
+            <img src="covers/kettle-and-snowfall.jpg" alt="Kettle & Snowfall winter album cover" class="cover-img" />
+            <span class="season-pill winter-pill">WINTER · 02</span>
+            <span class="arc-pill">8 AM → 12 AM</span>
+          </div>
+        </a>
+
+        <div class="card-body">
+          <div class="card-head">
+            <div>
+              <h2 class="card-title"><a href="/kettle-and-snowfall/">Kettle &amp; Snowfall</a></h2>
+              <p class="card-meta">6 tracks · 12:31 · 68–84 BPM · Sleepy Boom-Bap Lo-Fi</p>
+            </div>
+          </div>
+
+          <p class="card-desc">
+            A cozy snowy day from frost on the morning glass to midnight streetlamps — warm felt piano, mellow Rhodes, dusty swung boom-bap drums, and delicate music-box bells.
+          </p>
+
+          <ol class="mini-tracks">
+            <li><a href="/kettle-and-snowfall/#track=1"><span>01</span> First Frost (8 AM)<em>76 BPM · F</em></a></li>
+            <li><a href="/kettle-and-snowfall/#track=2"><span>02</span> Steam on the Glass (11 AM)<em>82 BPM · D</em></a></li>
+            <li><a href="/kettle-and-snowfall/#track=3"><span>03</span> Tram Through White Pines (2 PM)<em>84 BPM · Bb</em></a></li>
+            <li><a href="/kettle-and-snowfall/#track=4"><span>04</span> Kettle &amp; Snowfall (5 PM)<em>78 BPM · G</em></a></li>
+            <li><a href="/kettle-and-snowfall/#track=5"><span>05</span> Wool &amp; Hearthlight (9 PM)<em>72 BPM · Cm</em></a></li>
+            <li><a href="/kettle-and-snowfall/#track=6"><span>06</span> Midnight Snowfall (12 AM)<em>68 BPM · Eb</em></a></li>
+          </ol>
+
+          <div class="preview-strip">
+            <div class="preview-bar"><div class="preview-fill"></div></div>
+          </div>
+
+          <div class="card-actions">
+            <a href="/kettle-and-snowfall/" class="btn-open winter-btn">
+              <span>Open Album</span>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" width="15" height="15">
+                <line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/>
+              </svg>
+            </a>
+            <button type="button" class="btn-preview" aria-label="Preview Kettle & Snowfall (5 PM)">
+              <svg class="ic-play" viewBox="0 0 24 24" fill="currentColor" width="14" height="14"><path d="M8 5v14l11-7z"/></svg>
+              <svg class="ic-pause hidden" viewBox="0 0 24 24" fill="currentColor" width="14" height="14"><path d="M6 5h4v14H6zm8 0h4v14h-4z"/></svg>
+              <span class="preview-label">Preview Track 4</span>
+            </button>
+          </div>
+        </div>
+      </article>
+    </section>
+
+    <footer class="hub-footer">
+      <span>Composed in OpenBand · Dual-Engine 44.1 kHz Stereo MP3</span>
+      <span>Summer &amp; Winter Companion Diptych</span>
+    </footer>
+  </main>
+
+  <audio id="previewAudio" preload="none"></audio>
+  <script src="app.js"></script>
+</body>
+</html>
