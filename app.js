@@ -1,88 +1,33 @@
 (function () {
-  const audio = document.getElementById('previewAudio');
-  const cards = Array.from(document.querySelectorAll('.album-card'));
-  const shareBtn = document.getElementById('shareHubBtn');
-  const shareLabel = document.getElementById('shareHubLabel');
+  const filterButtons = Array.from(document.querySelectorAll('.filter-pill'));
+  const cards = Array.from(document.querySelectorAll('.page-card'));
+  const themeBtn = document.getElementById('themeToggle');
 
-  let activeCard = null;
-
-  function setMood(mood) {
-    document.documentElement.setAttribute('data-mood', mood || 'neutral');
-  }
-
-  function resetCardUI(card) {
-    card.classList.remove('playing');
-    card.querySelector('.ic-play').classList.remove('hidden');
-    card.querySelector('.ic-pause').classList.add('hidden');
-    const lbl = card.querySelector('.preview-label');
-    lbl.textContent = card.dataset.album === 'summer' ? 'Preview Track 2' : 'Preview Track 4';
-    card.querySelector('.preview-fill').style.width = '0%';
-  }
-
-  function stopPreview() {
-    audio.pause();
-    audio.currentTime = 0;
-    if (activeCard) {
-      resetCardUI(activeCard);
-      activeCard = null;
-    }
-    setMood('neutral');
-  }
-
-  cards.forEach((card) => {
-    const mood = card.dataset.album;
-    const btn = card.querySelector('.btn-preview');
-    const icPlay = card.querySelector('.ic-play');
-    const icPause = card.querySelector('.ic-pause');
-    const lbl = card.querySelector('.preview-label');
-
-    card.addEventListener('mouseenter', () => {
-      if (!activeCard) setMood(mood);
-    });
-    card.addEventListener('mouseleave', () => {
-      if (!activeCard) setMood('neutral');
+  function applyFilter(category) {
+    filterButtons.forEach((btn) => {
+      const isActive = btn.dataset.filter === category;
+      btn.classList.toggle('active', isActive);
+      btn.setAttribute('aria-selected', String(isActive));
     });
 
-    btn.addEventListener('click', () => {
-      if (activeCard === card && !audio.paused) {
-        stopPreview();
-        return;
-      }
-      if (activeCard && activeCard !== card) {
-        resetCardUI(activeCard);
-      }
-      activeCard = card;
-      card.classList.add('playing');
-      icPlay.classList.add('hidden');
-      icPause.classList.remove('hidden');
-      lbl.textContent = `Playing · ${card.dataset.previewTitle}`;
-      setMood(mood);
-
-      if (audio.getAttribute('src') !== card.dataset.preview) {
-        audio.src = card.dataset.preview;
-      }
-      audio.play().catch(() => {
-        stopPreview();
-      });
+    cards.forEach((card) => {
+      const match = category === 'all' || card.dataset.category === category;
+      card.classList.toggle('is-hidden', !match);
     });
+  }
+
+  filterButtons.forEach((btn) => {
+    btn.addEventListener('click', () => applyFilter(btn.dataset.filter));
   });
 
-  audio.addEventListener('timeupdate', () => {
-    if (!activeCard || !Number.isFinite(audio.duration) || audio.duration <= 0) return;
-    const pct = Math.min(100, (audio.currentTime / audio.duration) * 100);
-    activeCard.querySelector('.preview-fill').style.width = `${pct.toFixed(1)}%`;
-  });
-
-  audio.addEventListener('ended', stopPreview);
-
-  shareBtn.addEventListener('click', async () => {
-    const url = window.location.origin + window.location.pathname;
-    try {
-      await navigator.clipboard.writeText(url);
-      shareLabel.textContent = 'Link Copied!';
-      setTimeout(() => { shareLabel.textContent = 'Copy Hub Link'; }, 1800);
-    } catch {
-      window.prompt('Copy hub link:', url);
+  themeBtn.addEventListener('click', () => {
+    const isDark = document.documentElement.getAttribute('data-theme') === 'dark';
+    const next = isDark ? 'light' : 'dark';
+    if (next === 'dark') {
+      document.documentElement.setAttribute('data-theme', 'dark');
+    } else {
+      document.documentElement.removeAttribute('data-theme');
     }
+    localStorage.setItem('davuses-theme', next);
   });
 })();

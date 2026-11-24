@@ -1,154 +1,315 @@
 <!DOCTYPE html>
-<html lang="en" data-mood="neutral">
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Seasonal Tapes — OpenBand Concept Albums</title>
-  <meta name="description" content="Two full-day seasonal concept albums composed in OpenBand: Four O'Clock Coast (Summer) and Kettle & Snowfall (Winter), each with live OpenBand Studio & Web Audio Synth A/B comparison." />
-  <meta property="og:title" content="Seasonal Tapes — Summer & Winter Concept Albums" />
-  <meta property="og:description" content="Explore Four O'Clock Coast (Summer) and Kettle & Snowfall (Winter) — 12 tracks across two full-day arcs." />
-  <meta property="og:image" content="covers/kettle-and-snowfall.jpg" />
+  <title>davuses — Web Apps, Experiments &amp; Music</title>
+  <meta name="description" content="Entry point for davuses GitHub Pages: TurnRiver poker training studio, ONE LAW interactive simulation, Quick Decide offline utility, Seasonal Tapes concept albums, and open-source tools." />
+  <meta property="og:title" content="davuses — Web Apps, Experiments &amp; Music" />
+  <meta property="og:description" content="Interactive web apps, physics simulations, training studios, and seasonal concept albums — all live on davuses.github.io." />
+  <meta property="og:image" content="https://davuses.github.io/covers/four-oclock-coast.jpg" />
   <meta property="og:type" content="website" />
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%23161c26'/%3E%3Ctext x='32' y='43' text-anchor='middle' font-family='Georgia,serif' font-size='34' font-weight='600' fill='%23f6f4ef'%3Ed%3C/text%3E%3C/svg%3E" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=JetBrains+Mono:wght@400;500&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <script>
+    (function () {
+      var saved = localStorage.getItem('davuses-theme');
+      var prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+      if (saved === 'dark' || (!saved && prefersDark)) {
+        document.documentElement.setAttribute('data-theme', 'dark');
+      }
+    })();
+  </script>
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
   <div class="ambient-wash" aria-hidden="true"></div>
 
   <main class="shell">
-    <header class="hub-header">
+    <!-- Hero Header -->
+    <header class="site-header">
       <div class="header-copy">
-        <p class="eyebrow">OPENBAND CONCEPT SERIES · 2 ALBUMS · 12 TRACKS</p>
-        <h1 class="hub-title">Seasonal Tapes</h1>
-        <p class="hub-sub">
-          Two companion full-day concept albums — from sunlit coastal afternoons to snowy twilight cafés.
-          Click any album to open the full interactive player with live OpenBand Studio / Web Audio Synth A/B switching.
+        <p class="eyebrow">DAVUSES.GITHUB.IO · INDEX</p>
+        <h1 class="site-title">davuses</h1>
+        <p class="site-sub">
+          Interactive web apps, physics experiments, training studios, and seasonal concept albums — all live in the browser.
         </p>
       </div>
       <div class="header-actions">
-        <button id="shareHubBtn" type="button" class="pill-btn">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="14" height="14">
-            <circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/>
-            <line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/>
+        <a href="https://github.com/davuses" class="pill-btn" target="_blank" rel="noopener noreferrer">
+          <svg viewBox="0 0 24 24" fill="currentColor" width="15" height="15" aria-hidden="true">
+            <path d="M12 .5C5.65.5.5 5.65.5 12c0 5.08 3.29 9.39 7.86 10.91.57.1.78-.25.78-.55 0-.27-.01-1.17-.02-2.12-3.2.7-3.88-1.36-3.88-1.36-.52-1.33-1.28-1.68-1.28-1.68-1.05-.72.08-.7.08-.7 1.16.08 1.77 1.19 1.77 1.19 1.03 1.77 2.7 1.26 3.36.96.1-.75.4-1.26.73-1.55-2.55-.29-5.24-1.28-5.24-5.68 0-1.25.45-2.28 1.18-3.08-.12-.29-.51-1.46.11-3.04 0 0 .97-.31 3.16 1.18a10.95 10.95 0 0 1 5.76 0c2.2-1.49 3.16-1.18 3.16-1.18.62 1.58.23 2.75.11 3.04.74.8 1.18 1.83 1.18 3.08 0 4.41-2.69 5.39-5.26 5.67.41.36.78 1.06.78 2.14 0 1.55-.01 2.8-.01 3.18 0 .31.21.66.79.55A11.51 11.51 0 0 0 23.5 12C23.5 5.65 18.35.5 12 .5Z"/>
           </svg>
-          <span id="shareHubLabel">Copy Hub Link</span>
+          <span>GitHub</span>
+        </a>
+        <button id="themeToggle" type="button" class="pill-btn icon-only" aria-label="Toggle dark mode" title="Toggle theme">
+          <svg class="ic-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="15" height="15" aria-hidden="true">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+          </svg>
+          <svg class="ic-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="15" height="15" aria-hidden="true">
+            <circle cx="12" cy="12" r="4"/>
+            <path d="M12 2v2m0 16v2M4.93 4.93l1.41 1.41m11.32 11.32l1.41 1.41M2 12h2m16 0h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/>
+          </svg>
         </button>
       </div>
     </header>
 
-    <section class="album-grid" aria-label="Albums">
-      <!-- ALBUM 01: SUMMER -->
-      <article class="album-card" data-album="summer" data-preview="/four-oclock-coast/audio/02_Sea_Breeze_at_Four.mp3" data-preview-title="Sea Breeze at Four">
-        <a href="/four-oclock-coast/" class="cover-link" aria-label="Open Four O'Clock Coast album">
-          <div class="cover-frame">
-            <img src="covers/four-oclock-coast.jpg" alt="Four O'Clock Coast summer album cover" class="cover-img" />
-            <span class="season-pill summer-pill">SUMMER · 01</span>
-            <span class="arc-pill">9 AM → 12 AM</span>
-          </div>
-        </a>
+    <!-- Live GitHub Pages Section -->
+    <section class="section" aria-labelledby="pages-heading">
+      <div class="section-head">
+        <div>
+          <h2 id="pages-heading" class="section-title">Live Pages</h2>
+          <p class="section-sub">Hosted directly on GitHub Pages — click to launch</p>
+        </div>
+        <div class="filter-bar" role="tablist" aria-label="Filter live pages">
+          <button type="button" class="filter-pill active" data-filter="all" role="tab" aria-selected="true">All</button>
+          <button type="button" class="filter-pill" data-filter="apps" role="tab" aria-selected="false">Apps &amp; Tools</button>
+          <button type="button" class="filter-pill" data-filter="interactive" role="tab" aria-selected="false">Interactive</button>
+          <button type="button" class="filter-pill" data-filter="music" role="tab" aria-selected="false">Music</button>
+        </div>
+      </div>
 
-        <div class="card-body">
-          <div class="card-head">
-            <div>
-              <h2 class="card-title"><a href="/four-oclock-coast/">Four O'Clock Coast</a></h2>
-              <p class="card-meta">6 tracks · 12:37 · 76–112 BPM · City-Pop &amp; Coastal Breeze</p>
+      <div class="pages-grid" id="pagesGrid">
+        <!-- TurnRiver -->
+        <article class="page-card" data-category="apps">
+          <a href="/TurnRiver/" class="card-banner banner-turnriver" aria-label="Open TurnRiver">
+            <span class="banner-tag">POKER STUDIO · 6-MAX 100BB</span>
+            <svg class="banner-mark" viewBox="0 0 64 64" width="44" height="44" aria-hidden="true">
+              <path d="M32 10C23 21 13 28 13 37c0 6 4.6 10.4 10.3 10.4 3.3 0 6-1.4 7.3-3.5-.3 3.9-1.7 7.1-4.6 9.6h12c-2.9-2.5-4.3-5.7-4.6-9.6 1.3 2.1 4 3.5 7.3 3.5 5.7 0 10.3-4.4 10.3-10.4 0-9-10-16-19-27z" fill="currentColor"/>
+            </svg>
+            <span class="banner-path">/TurnRiver/</span>
+          </a>
+          <div class="card-body">
+            <h3 class="card-title"><a href="/TurnRiver/">TurnRiver</a></h3>
+            <p class="card-subtitle">6-Max Texas Hold'em Training Studio</p>
+            <p class="card-desc">
+              Train 100bb No-Limit Hold'em with preflop ranges, postflop decision drills, pot odds &amp; EV math, range reading, and interactive bot tables.
+            </p>
+            <div class="card-actions">
+              <a href="/TurnRiver/" class="btn-primary">
+                <span>Open Studio</span>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" width="14" height="14" aria-hidden="true">
+                  <line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/>
+                </svg>
+              </a>
+              <a href="https://github.com/davuses/TurnRiver" class="btn-ghost" target="_blank" rel="noopener noreferrer">Source</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- ONE LAW -->
+        <article class="page-card" data-category="interactive">
+          <a href="/one-law/" class="card-banner banner-onelaw" aria-label="Open ONE LAW">
+            <span class="banner-tag">SYMPLECTIC PHYSICS · 1 FILE</span>
+            <svg class="banner-wave" viewBox="0 0 240 72" fill="none" aria-hidden="true">
+              <path d="M0 36 C 30 8, 60 8, 90 36 C 120 64, 150 64, 180 36 C 200 18, 220 18, 240 36" stroke="currentColor" stroke-width="1.8" stroke-opacity="0.85"/>
+              <path d="M0 36 C 40 60, 80 12, 120 36 C 160 60, 200 12, 240 36" stroke="#8cc4e4" stroke-width="1.2" stroke-opacity="0.55"/>
+              <circle cx="90" cy="36" r="3.5" fill="currentColor"/>
+              <circle cx="180" cy="36" r="3.5" fill="#7fd4ae"/>
+            </svg>
+            <span class="banner-path">/one-law/</span>
+          </a>
+          <div class="card-body">
+            <h3 class="card-title"><a href="/one-law/">ONE LAW</a></h3>
+            <p class="card-subtitle">Five Realities from a Single Equation</p>
+            <p class="card-desc">
+              Five synchronized physical realities driven by one symplectic differential equation — packaged in a single zero-dependency HTML file.
+            </p>
+            <div class="card-actions">
+              <a href="/one-law/" class="btn-primary">
+                <span>Launch</span>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" width="14" height="14" aria-hidden="true">
+                  <line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/>
+                </svg>
+              </a>
+              <a href="https://github.com/davuses/one-law" class="btn-ghost" target="_blank" rel="noopener noreferrer">Source</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Quick Decide -->
+        <article class="page-card" data-category="apps">
+          <a href="/quick-decide/" class="card-banner banner-quickdecide" aria-label="Open Quick Decide">
+            <span class="banner-tag">PWA · OFFLINE-FIRST</span>
+            <svg class="banner-mark" viewBox="0 0 64 64" width="44" height="44" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <circle cx="32" cy="32" r="20" stroke-opacity="0.35"/>
+              <path d="M22 36 L32 18 L42 36 L32 32 Z" fill="currentColor" fill-opacity="0.22"/>
+              <circle cx="32" cy="32" r="3.2" fill="currentColor"/>
+            </svg>
+            <span class="banner-path">/quick-decide/</span>
+          </a>
+          <div class="card-body">
+            <h3 class="card-title"><a href="/quick-decide/">Quick Decide</a></h3>
+            <p class="card-subtitle">Offline-First Decision Helper</p>
+            <p class="card-desc">
+              A calm, zero-friction decision helper designed to cut through everyday low-stakes decision fatigue — installable and works fully offline.
+            </p>
+            <div class="card-actions">
+              <a href="/quick-decide/" class="btn-primary">
+                <span>Open App</span>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" width="14" height="14" aria-hidden="true">
+                  <line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/>
+                </svg>
+              </a>
+              <a href="https://github.com/davuses/quick-decide" class="btn-ghost" target="_blank" rel="noopener noreferrer">Source</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Featured Music Hub: Seasonal Tapes -->
+        <article class="page-card music-feature" data-category="music">
+          <div class="music-feature-copy">
+            <div class="music-feature-top">
+              <span class="music-badge">MUSIC · OPENBAND CONCEPT SERIES</span>
+              <span class="music-path">/music/</span>
+            </div>
+            <h3 class="card-title"><a href="/music/">Seasonal Tapes</a></h3>
+            <p class="card-subtitle">Two Full-Day Concept Albums · 12 Tracks · Live A/B Engine Player</p>
+            <p class="card-desc">
+              A summer &amp; winter diptych composed in OpenBand — browse both albums with inline audio previews in the dedicated music hub, or jump straight into either player.
+            </p>
+            <div class="music-links">
+              <a href="/music/" class="btn-primary">
+                <span>Open Music Hub</span>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" width="14" height="14" aria-hidden="true">
+                  <line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/>
+                </svg>
+              </a>
+              <a href="/four-oclock-coast/" class="btn-album summer-chip">
+                <span class="dot summer-dot"></span>
+                <span>Four O'Clock Coast</span>
+              </a>
+              <a href="/kettle-and-snowfall/" class="btn-album winter-chip">
+                <span class="dot winter-dot"></span>
+                <span>Kettle &amp; Snowfall</span>
+              </a>
             </div>
           </div>
 
-          <p class="card-desc">
-            One sunlit coastal day in six scenes — crisp morning linen, four o'clock sea breeze, poolside funk-bossa, amber pier sunset, neon cicada dusk, and midnight shoreline.
-          </p>
-
-          <ol class="mini-tracks">
-            <li><a href="/four-oclock-coast/#track=1"><span>01</span> Sunlit Linen (9 AM)<em>96 BPM · D</em></a></li>
-            <li><a href="/four-oclock-coast/#track=2"><span>02</span> Sea Breeze at Four<em>104 BPM · G</em></a></li>
-            <li><a href="/four-oclock-coast/#track=3"><span>03</span> Poolside Citron<em>112 BPM · F</em></a></li>
-            <li><a href="/four-oclock-coast/#track=4"><span>04</span> Amber Pier (6:30 PM)<em>88 BPM · C</em></a></li>
-            <li><a href="/four-oclock-coast/#track=5"><span>05</span> Cicada Dusk (9 PM)<em>92 BPM · Am</em></a></li>
-            <li><a href="/four-oclock-coast/#track=6"><span>06</span> Midnight Tide<em>76 BPM · Eb</em></a></li>
-          </ol>
-
-          <div class="preview-strip">
-            <div class="preview-bar"><div class="preview-fill"></div></div>
-          </div>
-
-          <div class="card-actions">
-            <a href="/four-oclock-coast/" class="btn-open summer-btn">
-              <span>Open Album</span>
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" width="15" height="15">
-                <line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/>
-              </svg>
+          <div class="music-covers">
+            <a href="/four-oclock-coast/" class="mini-cover" aria-label="Open Four O'Clock Coast">
+              <img src="covers/four-oclock-coast.jpg" alt="Four O'Clock Coast summer album cover" loading="lazy" />
+              <span class="mini-cover-label">Summer · 01</span>
             </a>
-            <button type="button" class="btn-preview" aria-label="Preview Sea Breeze at Four">
-              <svg class="ic-play" viewBox="0 0 24 24" fill="currentColor" width="14" height="14"><path d="M8 5v14l11-7z"/></svg>
-              <svg class="ic-pause hidden" viewBox="0 0 24 24" fill="currentColor" width="14" height="14"><path d="M6 5h4v14H6zm8 0h4v14h-4z"/></svg>
-              <span class="preview-label">Preview Track 2</span>
-            </button>
-          </div>
-        </div>
-      </article>
-
-      <!-- ALBUM 02: WINTER -->
-      <article class="album-card" data-album="winter" data-preview="/kettle-and-snowfall/audio/04_Kettle_and_Snowfall_5PM.mp3" data-preview-title="Kettle & Snowfall (5 PM)">
-        <a href="/kettle-and-snowfall/" class="cover-link" aria-label="Open Kettle & Snowfall album">
-          <div class="cover-frame">
-            <img src="covers/kettle-and-snowfall.jpg" alt="Kettle & Snowfall winter album cover" class="cover-img" />
-            <span class="season-pill winter-pill">WINTER · 02</span>
-            <span class="arc-pill">8 AM → 12 AM</span>
-          </div>
-        </a>
-
-        <div class="card-body">
-          <div class="card-head">
-            <div>
-              <h2 class="card-title"><a href="/kettle-and-snowfall/">Kettle &amp; Snowfall</a></h2>
-              <p class="card-meta">6 tracks · 12:31 · 68–84 BPM · Sleepy Boom-Bap Lo-Fi</p>
-            </div>
-          </div>
-
-          <p class="card-desc">
-            A cozy snowy day from frost on the morning glass to midnight streetlamps — warm felt piano, mellow Rhodes, dusty swung boom-bap drums, and delicate music-box bells.
-          </p>
-
-          <ol class="mini-tracks">
-            <li><a href="/kettle-and-snowfall/#track=1"><span>01</span> First Frost (8 AM)<em>76 BPM · F</em></a></li>
-            <li><a href="/kettle-and-snowfall/#track=2"><span>02</span> Steam on the Glass (11 AM)<em>82 BPM · D</em></a></li>
-            <li><a href="/kettle-and-snowfall/#track=3"><span>03</span> Tram Through White Pines (2 PM)<em>84 BPM · Bb</em></a></li>
-            <li><a href="/kettle-and-snowfall/#track=4"><span>04</span> Kettle &amp; Snowfall (5 PM)<em>78 BPM · G</em></a></li>
-            <li><a href="/kettle-and-snowfall/#track=5"><span>05</span> Wool &amp; Hearthlight (9 PM)<em>72 BPM · Cm</em></a></li>
-            <li><a href="/kettle-and-snowfall/#track=6"><span>06</span> Midnight Snowfall (12 AM)<em>68 BPM · Eb</em></a></li>
-          </ol>
-
-          <div class="preview-strip">
-            <div class="preview-bar"><div class="preview-fill"></div></div>
-          </div>
-
-          <div class="card-actions">
-            <a href="/kettle-and-snowfall/" class="btn-open winter-btn">
-              <span>Open Album</span>
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" width="15" height="15">
-                <line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/>
-              </svg>
+            <a href="/kettle-and-snowfall/" class="mini-cover" aria-label="Open Kettle & Snowfall">
+              <img src="covers/kettle-and-snowfall.jpg" alt="Kettle & Snowfall winter album cover" loading="lazy" />
+              <span class="mini-cover-label">Winter · 02</span>
             </a>
-            <button type="button" class="btn-preview" aria-label="Preview Kettle & Snowfall (5 PM)">
-              <svg class="ic-play" viewBox="0 0 24 24" fill="currentColor" width="14" height="14"><path d="M8 5v14l11-7z"/></svg>
-              <svg class="ic-pause hidden" viewBox="0 0 24 24" fill="currentColor" width="14" height="14"><path d="M6 5h4v14H6zm8 0h4v14h-4z"/></svg>
-              <span class="preview-label">Preview Track 4</span>
-            </button>
           </div>
-        </div>
-      </article>
+        </article>
+      </div>
     </section>
 
-    <footer class="hub-footer">
-      <span>Composed in OpenBand · Dual-Engine 44.1 kHz Stereo MP3</span>
-      <span>Summer &amp; Winter Companion Diptych</span>
+    <!-- Selected Non-Pages Repositories -->
+    <section class="section repos-section" aria-labelledby="repos-heading">
+      <div class="section-head compact-head">
+        <div>
+          <h2 id="repos-heading" class="section-title">Selected Repositories</h2>
+          <p class="section-sub">Self-hosted apps, browser extensions, and utilities on GitHub</p>
+        </div>
+        <a href="https://github.com/davuses?tab=repositories" class="text-link" target="_blank" rel="noopener noreferrer">
+          All repositories ↗
+        </a>
+      </div>
+
+      <div class="repos-grid">
+        <a href="https://github.com/davuses/glossbook" class="repo-card" target="_blank" rel="noopener noreferrer">
+          <div class="repo-head">
+            <span class="repo-name">glossbook</span>
+            <span class="repo-arrow" aria-hidden="true">↗</span>
+          </div>
+          <p class="repo-desc">
+            Personal FastAPI + SQLite IELTS vocabulary app with Markdown definitions, IPA phonetics, Merriam-Webster lookups, and review tracking.
+          </p>
+          <div class="repo-meta">
+            <span class="lang-dot lang-py"></span>
+            <span>Python</span>
+          </div>
+        </a>
+
+        <a href="https://github.com/davuses/pagevoice" class="repo-card" target="_blank" rel="noopener noreferrer">
+          <div class="repo-head">
+            <span class="repo-name">pagevoice</span>
+            <span class="repo-arrow" aria-hidden="true">↗</span>
+          </div>
+          <p class="repo-desc">
+            Read web pages aloud with Kokoro or Pocket TTS via a self-hosted server and cross-browser extension.
+          </p>
+          <div class="repo-meta">
+            <span class="lang-dot lang-js"></span>
+            <span>JavaScript</span>
+          </div>
+        </a>
+
+        <a href="https://github.com/davuses/search-dictionary-extension" class="repo-card" target="_blank" rel="noopener noreferrer">
+          <div class="repo-head">
+            <span class="repo-name">search-dictionary-extension</span>
+            <span class="repo-arrow" aria-hidden="true">↗</span>
+          </div>
+          <p class="repo-desc">
+            Chrome &amp; Firefox extension to right-click selected text and look it up on Google, Oxford, Longman, or Merriam-Webster.
+          </p>
+          <div class="repo-meta">
+            <span class="lang-dot lang-js"></span>
+            <span>JavaScript</span>
+          </div>
+        </a>
+
+        <a href="https://github.com/davuses/tts-extension" class="repo-card" target="_blank" rel="noopener noreferrer">
+          <div class="repo-head">
+            <span class="repo-name">tts-extension</span>
+            <span class="repo-arrow" aria-hidden="true">↗</span>
+          </div>
+          <p class="repo-desc">
+            Browser text-to-speech extension with support for Kokoro, Edge TTS, and Google Translate voices.
+          </p>
+          <div class="repo-meta">
+            <span class="lang-dot lang-js"></span>
+            <span>JavaScript</span>
+          </div>
+        </a>
+
+        <a href="https://github.com/davuses/PyExtract" class="repo-card" target="_blank" rel="noopener noreferrer">
+          <div class="repo-head">
+            <span class="repo-name">PyExtract</span>
+            <span class="repo-arrow" aria-hidden="true">↗</span>
+          </div>
+          <p class="repo-desc">
+            Command-line utility that recursively finds and extracts nested archives in a target folder.
+          </p>
+          <div class="repo-meta">
+            <span class="lang-dot lang-py"></span>
+            <span>Python</span>
+          </div>
+        </a>
+
+        <a href="https://github.com/davuses/HackerNewsHotBot" class="repo-card" target="_blank" rel="noopener noreferrer">
+          <div class="repo-head">
+            <span class="repo-name">HackerNewsHotBot</span>
+            <span class="repo-arrow" aria-hidden="true">↗</span>
+          </div>
+          <p class="repo-desc">
+            Telegram bot that automatically shares the latest hot stories from Hacker News to a channel or chat.
+          </p>
+          <div class="repo-meta">
+            <span class="lang-dot lang-py"></span>
+            <span>Python</span>
+          </div>
+        </a>
+      </div>
+    </section>
+
+    <footer class="site-footer">
+      <span>davuses.github.io</span>
+      <div class="footer-links">
+        <a href="/music/">Music Hub</a>
+        <a href="https://github.com/davuses" target="_blank" rel="noopener noreferrer">GitHub</a>
+      </div>
     </footer>
   </main>
 
-  <audio id="previewAudio" preload="none"></audio>
   <script src="app.js"></script>
 </body>
 </html>
