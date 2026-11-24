@@ -14,8 +14,7 @@
     card.classList.remove('playing');
     card.querySelector('.ic-play').classList.remove('hidden');
     card.querySelector('.ic-pause').classList.add('hidden');
-    const lbl = card.querySelector('.preview-label');
-    lbl.textContent = card.dataset.album === 'summer' ? 'Preview Track 2' : 'Preview Track 4';
+    card.querySelector('.preview-label').textContent = card.dataset.defaultLabel || 'Preview';
     card.querySelector('.preview-fill').style.width = '0%';
   }
 

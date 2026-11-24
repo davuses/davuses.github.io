@@ -473,7 +473,9 @@ html[data-theme="dark"] .banner-quickdecide .banner-tag {
   flex-shrink: 0;
 }
 
+.spring-dot { background: #d94c7a; }
 .summer-dot { background: #0f8b8d; }
+.autumn-dot { background: #c85524; }
 .winter-dot { background: #d97706; }
 
 .music-covers {
