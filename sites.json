@@ -1,0 +1,83 @@
+[
+  {
+    "url": "https://davuses.github.io/four-oclock-coast/",
+    "title": "four-oclock-coast",
+    "description": "Four O'Clock Coast — 6-track summer concept album demo",
+    "source": "repository",
+    "repository": "https://github.com/davuses/four-oclock-coast",
+    "first_seen": "2026-11-25",
+    "status": "discovered"
+  },
+  {
+    "url": "https://davuses.github.io/intelligence-age/",
+    "title": "How to Thrive in the Age of Intelligence — A Field Guide",
+    "description": "A practical guide to judgment, mastery, economic resilience, relationships and meaning in the age of AI.",
+    "source": "subsite",
+    "repository": "https://github.com/davuses/davuses.github.io",
+    "first_seen": "2026-11-25",
+    "status": "discovered"
+  },
+  {
+    "url": "https://davuses.github.io/kettle-and-snowfall/",
+    "title": "kettle-and-snowfall",
+    "description": "Kettle & Snowfall — 6-track winter lo-fi concept album demo with OpenBand Studio / Web Audio Synth A/B comparison",
+    "source": "repository",
+    "repository": "https://github.com/davuses/kettle-and-snowfall",
+    "first_seen": "2026-11-25",
+    "status": "discovered"
+  },
+  {
+    "url": "https://davuses.github.io/maple-and-lanterns/",
+    "title": "maple-and-lanterns",
+    "description": "Maple & Lanterns — 6-track autumn concept album demo with OpenBand Studio / Web Audio Synth A/B comparison",
+    "source": "repository",
+    "repository": "https://github.com/davuses/maple-and-lanterns",
+    "first_seen": "2026-11-25",
+    "status": "discovered"
+  },
+  {
+    "url": "https://davuses.github.io/music/",
+    "title": "Seasonal Tapes — Four Seasons OpenBand Concept Albums",
+    "description": "Four full-day seasonal concept albums composed in OpenBand: Sakura & Raindrops (Spring), Four O'Clock Coast (Summer), Maple & Lanterns (Autumn), and Kettle & Snowfall (Winter).",
+    "source": "subsite",
+    "repository": "https://github.com/davuses/davuses.github.io",
+    "first_seen": "2026-11-25",
+    "status": "discovered"
+  },
+  {
+    "url": "https://davuses.github.io/one-law/",
+    "title": "one-law",
+    "description": "ONE LAW — Five synchronized realities driven by one symplectic differential equation. Single HTML file, zero dependencies.",
+    "source": "repository",
+    "repository": "https://github.com/davuses/one-law",
+    "first_seen": "2026-11-25",
+    "status": "discovered"
+  },
+  {
+    "url": "https://davuses.github.io/quick-decide/",
+    "title": "quick-decide",
+    "description": "Offline-first decision helper app to reduce low-stakes decision fatigue",
+    "source": "repository",
+    "repository": "https://github.com/davuses/quick-decide",
+    "first_seen": "2026-11-25",
+    "status": "discovered"
+  },
+  {
+    "url": "https://davuses.github.io/sakura-and-raindrops/",
+    "title": "sakura-and-raindrops",
+    "description": "Sakura & Raindrops — 6-track spring concept album demo with OpenBand Studio / Web Audio Synth A/B comparison",
+    "source": "repository",
+    "repository": "https://github.com/davuses/sakura-and-raindrops",
+    "first_seen": "2026-11-25",
+    "status": "discovered"
+  },
+  {
+    "url": "https://davuses.github.io/TurnRiver/",
+    "title": "TurnRiver",
+    "description": "TurnRiver",
+    "source": "repository",
+    "repository": "https://github.com/davuses/TurnRiver",
+    "first_seen": "2026-11-25",
+    "status": "discovered"
+  }
+]
