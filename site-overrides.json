@@ -1,0 +1,117 @@
+{
+  "categories": [
+    { "id": "apps", "label": "Apps & Tools" },
+    { "id": "interactive", "label": "Interactive" },
+    { "id": "writing", "label": "Writing & Guides" },
+    { "id": "music", "label": "Music" }
+  ],
+  "featured_groups": {
+    "seasonal-tapes": {
+      "url": "/music/",
+      "path": "/music/",
+      "category": "music",
+      "badge": "MUSIC · OPENBAND CONCEPT SERIES",
+      "title": "Seasonal Tapes",
+      "description": "A complete four-season collection composed in OpenBand — from spring blossoms and coastal summer afternoons to crimson autumn alleys and snowy twilight cafés.",
+      "cta": "Open Music Hub",
+      "order": 100
+    }
+  },
+  "sites": {
+    "TurnRiver": {
+      "title": "TurnRiver",
+      "subtitle": "6-Max Texas Hold'em Training Studio",
+      "description": "Train 100bb No-Limit Hold'em with preflop ranges, postflop decision drills, pot odds & EV math, range reading, and interactive bot tables.",
+      "category": "apps",
+      "banner": "turnriver",
+      "tag": "POKER STUDIO · 6-MAX 100BB",
+      "cta": "Open Studio",
+      "order": 10
+    },
+    "one-law": {
+      "title": "ONE LAW",
+      "subtitle": "Five Realities from a Single Equation",
+      "description": "Five synchronized physical realities driven by one symplectic differential equation — packaged in a single zero-dependency HTML file.",
+      "category": "interactive",
+      "banner": "onelaw",
+      "tag": "SYMPLECTIC PHYSICS · 1 FILE",
+      "cta": "Launch",
+      "order": 20
+    },
+    "quick-decide": {
+      "title": "Quick Decide",
+      "subtitle": "Offline-First Decision Helper",
+      "description": "A calm, zero-friction decision helper designed to cut through everyday low-stakes decision fatigue — installable and works fully offline.",
+      "category": "apps",
+      "banner": "quickdecide",
+      "tag": "PWA · OFFLINE-FIRST",
+      "cta": "Open App",
+      "order": 30
+    },
+    "intelligence-age": {
+      "title": "Age of Intelligence",
+      "subtitle": "How to Thrive When Intelligence Is Abundant",
+      "description": "A practical field guide to judgment, mastery, economic resilience, relationships, and meaning in the age of AI.",
+      "category": "writing",
+      "banner": "editorial",
+      "tag": "FIELD GUIDE · ESSAY",
+      "cta": "Read Guide",
+      "order": 40
+    },
+    "music": {
+      "group_hub": "seasonal-tapes"
+    },
+    "sakura-and-raindrops": {
+      "title": "Sakura & Raindrops",
+      "description": "A gentle spring day along rain-washed cherry-blossom canals — morning dew bells, breezy bicycle rides, sunshower Rhodes, matcha terraces, and petals on wet stone.",
+      "category": "music",
+      "group": "seasonal-tapes",
+      "season": "spring",
+      "season_label": "Spring · 01",
+      "genre": "Blossom City-Pop & Chillhop",
+      "arc": "7 AM → 11 PM",
+      "cover": "/covers/sakura-and-raindrops.jpg",
+      "preview_track": 3,
+      "order": 1
+    },
+    "four-oclock-coast": {
+      "title": "Four O'Clock Coast",
+      "description": "One sunlit coastal day in six scenes — crisp morning linen, four o'clock sea breeze, poolside funk-bossa, amber pier sunset, neon cicada dusk, and midnight shoreline.",
+      "category": "music",
+      "group": "seasonal-tapes",
+      "season": "summer",
+      "season_label": "Summer · 02",
+      "genre": "City-Pop & Coastal Breeze",
+      "arc": "9 AM → 12 AM",
+      "cover": "/covers/four-oclock-coast.jpg",
+      "preview_track": 2,
+      "order": 2
+    },
+    "maple-and-lanterns": {
+      "title": "Maple & Lanterns",
+      "description": "An unhurried October day from crisp chestnut mornings to lantern-lit riverbanks — secondhand bookshops, golden ginkgo walks, crimson maple twilight, and roasted tea.",
+      "category": "music",
+      "group": "seasonal-tapes",
+      "season": "autumn",
+      "season_label": "Autumn · 03",
+      "genre": "Golden Jazz-Hop & Warm Lo-Fi",
+      "arc": "8 AM → 11 PM",
+      "cover": "/covers/maple-and-lanterns.jpg",
+      "preview_track": 4,
+      "order": 3
+    },
+    "kettle-and-snowfall": {
+      "title": "Kettle & Snowfall",
+      "description": "A cozy snowy day from frost on the morning glass to midnight streetlamps — warm felt piano, mellow Rhodes, dusty swung boom-bap drums, and delicate music-box bells.",
+      "category": "music",
+      "group": "seasonal-tapes",
+      "season": "winter",
+      "season_label": "Winter · 04",
+      "genre": "Sleepy Boom-Bap Lo-Fi",
+      "arc": "8 AM → 12 AM",
+      "cover": "/covers/kettle-and-snowfall.jpg",
+      "preview_track": 4,
+      "order": 4
+    }
+  }
+}

@@ -198,11 +198,26 @@ html[data-theme="dark"] .ic-sun { display: block; }
   border-color: var(--text);
 }
 
-/* Live Pages Grid */
+/* Live Pages Grid (automatically balances 2 vs 3 columns) */
 .pages-grid {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 20px;
+}
+
+.pages-grid[data-cols="2"] {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.grid-status {
+  grid-column: 1 / -1;
+  margin: 0;
+  padding: 20px 22px;
+  border-radius: 16px;
+  border: 1px solid var(--border);
+  background: var(--surface);
+  color: var(--muted);
+  font-size: 14px;
 }
 
 .page-card {
@@ -227,10 +242,10 @@ html[data-theme="dark"] .ic-sun { display: block; }
   display: none;
 }
 
-/* Bespoke card banners */
+/* Bespoke & Auto-Generated Card Banners */
 .card-banner {
   position: relative;
-  height: 122px;
+  height: 128px;
   padding: 14px 16px;
   display: flex;
   align-items: center;
@@ -242,6 +257,7 @@ html[data-theme="dark"] .ic-sun { display: block; }
 
 .banner-tag, .banner-path {
   position: absolute;
+  z-index: 2;
   font-family: 'JetBrains Mono', monospace;
   font-size: 10.5px;
   font-weight: 500;
@@ -253,21 +269,61 @@ html[data-theme="dark"] .ic-sun { display: block; }
   left: 14px;
   padding: 3px 9px;
   border-radius: 999px;
+  backdrop-filter: blur(8px);
 }
 
 .banner-path {
   bottom: 10px;
   right: 14px;
-  opacity: 0.72;
+  opacity: 0.78;
 }
 
-.banner-mark, .banner-wave {
-  transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+.banner-mark, .banner-wave, .banner-artwork-img {
+  transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
 .page-card:hover .banner-mark,
 .page-card:hover .banner-wave {
   transform: scale(1.07);
+}
+
+.page-card:hover .banner-artwork-img {
+  transform: scale(1.05);
+}
+
+/* Artwork banner (auto-used for sites with og:image or new albums) */
+.banner-artwork {
+  padding: 0;
+  background: #141923;
+}
+
+.banner-artwork-img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.banner-artwork::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background: linear-gradient(180deg, rgba(10, 14, 22, 0.44) 0%, rgba(10, 14, 22, 0.16) 50%, rgba(10, 14, 22, 0.62) 100%);
+}
+
+.banner-artwork .banner-tag {
+  background: rgba(12, 17, 26, 0.74);
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  color: #f8fafc;
+}
+
+.banner-artwork .banner-path {
+  color: #f8fafc;
+  opacity: 0.92;
+  text-shadow: 0 1px 6px rgba(0, 0, 0, 0.55);
 }
 
 /* TurnRiver emerald poker aesthetic */
@@ -323,6 +379,97 @@ html[data-theme="dark"] .banner-quickdecide .banner-tag {
   color: #e2e8f0;
 }
 .banner-quickdecide .banner-path { color: inherit; }
+
+/* Editorial / Field Guide sage-paper aesthetic (matches Age of Intelligence) */
+.banner-editorial {
+  background:
+    radial-gradient(75% 90% at 52% 45%, rgba(83, 105, 88, 0.18), transparent 72%),
+    linear-gradient(145deg, #f1eee5 0%, #e4e8dc 100%);
+  color: #3c5241;
+}
+html[data-theme="dark"] .banner-editorial {
+  background:
+    radial-gradient(75% 90% at 52% 45%, rgba(182, 202, 170, 0.16), transparent 72%),
+    linear-gradient(145deg, #171e19 0%, #222c24 100%);
+  color: #b6caaa;
+}
+.banner-editorial .banner-tag {
+  background: rgba(60, 82, 65, 0.10);
+  border: 1px solid rgba(60, 82, 65, 0.22);
+  color: #3c5241;
+}
+html[data-theme="dark"] .banner-editorial .banner-tag {
+  background: rgba(182, 202, 170, 0.12);
+  border-color: rgba(182, 202, 170, 0.28);
+  color: #d5e3cb;
+}
+.banner-editorial .banner-path { color: inherit; }
+
+/* Deterministic Curated Fallback Banners (for newly discovered sites without artwork) */
+.banner-auto-0 {
+  background:
+    radial-gradient(75% 90% at 50% 42%, rgba(20, 184, 166, 0.22), transparent 72%),
+    linear-gradient(145deg, #0d171c 0%, #14262b 100%);
+  color: #5eead4;
+}
+.banner-auto-0 .banner-tag {
+  background: rgba(94, 234, 212, 0.12);
+  border: 1px solid rgba(94, 234, 212, 0.32);
+  color: #99f6e4;
+}
+.banner-auto-0 .banner-path { color: #ccfbf1; }
+
+.banner-auto-1 {
+  background:
+    radial-gradient(75% 90% at 50% 42%, rgba(245, 158, 11, 0.20), transparent 72%),
+    linear-gradient(145deg, #171310 0%, #261e17 100%);
+  color: #fbbf24;
+}
+.banner-auto-1 .banner-tag {
+  background: rgba(251, 191, 36, 0.13);
+  border: 1px solid rgba(251, 191, 36, 0.34);
+  color: #fde68a;
+}
+.banner-auto-1 .banner-path { color: #fef3c7; }
+
+.banner-auto-2 {
+  background:
+    radial-gradient(75% 90% at 50% 42%, rgba(129, 140, 248, 0.22), transparent 72%),
+    linear-gradient(145deg, #111322 0%, #1c2038 100%);
+  color: #a5b4fc;
+}
+.banner-auto-2 .banner-tag {
+  background: rgba(165, 180, 252, 0.13);
+  border: 1px solid rgba(165, 180, 252, 0.34);
+  color: #c7d2fe;
+}
+.banner-auto-2 .banner-path { color: #e0e7ff; }
+
+.banner-auto-3 {
+  background:
+    radial-gradient(75% 90% at 50% 42%, rgba(244, 114, 182, 0.20), transparent 72%),
+    linear-gradient(145deg, #1a1119 0%, #2a1927 100%);
+  color: #f9a8d4;
+}
+.banner-auto-3 .banner-tag {
+  background: rgba(249, 168, 212, 0.13);
+  border: 1px solid rgba(249, 168, 212, 0.32);
+  color: #fbcfe8;
+}
+.banner-auto-3 .banner-path { color: #fce7f3; }
+
+.banner-auto-4 {
+  background:
+    radial-gradient(75% 90% at 50% 42%, rgba(56, 189, 248, 0.20), transparent 72%),
+    linear-gradient(145deg, #0c1522 0%, #152438 100%);
+  color: #7dd3fc;
+}
+.banner-auto-4 .banner-tag {
+  background: rgba(125, 211, 252, 0.13);
+  border: 1px solid rgba(125, 211, 252, 0.32);
+  color: #bae6fd;
+}
+.banner-auto-4 .banner-path { color: #e0f2fe; }
 
 /* Card Body */
 .card-body {
@@ -477,11 +624,12 @@ html[data-theme="dark"] .banner-quickdecide .banner-tag {
 .summer-dot { background: #0f8b8d; }
 .autumn-dot { background: #c85524; }
 .winter-dot { background: #d97706; }
+.default-dot { background: var(--accent); }
 
 .music-covers {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 14px;
+  gap: 12px;
 }
 
 .mini-cover {
@@ -644,14 +792,16 @@ html[data-theme="dark"] .banner-quickdecide .banner-tag {
 
 /* Responsive */
 @media (max-width: 900px) {
-  .pages-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .pages-grid,
+  .pages-grid[data-cols="2"] { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .music-feature { grid-template-columns: 1fr; }
   .repos-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 }
 
 @media (max-width: 620px) {
   .shell { padding: 30px 16px 46px; gap: 30px; }
-  .pages-grid { grid-template-columns: 1fr; }
+  .pages-grid,
+  .pages-grid[data-cols="2"] { grid-template-columns: 1fr; }
   .repos-grid { grid-template-columns: 1fr; }
   .music-feature { padding: 18px; }
 }
