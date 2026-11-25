@@ -2,7 +2,7 @@
   "schema_version": 2,
   "owner": "davuses",
   "base_url": "https://davuses.github.io/",
-  "generated_at": "2026-11-25T19:12:29Z",
+  "generated_at": "2026-11-25T23:58:56Z",
   "discovery_warnings": [],
   "sites": [
     {
@@ -406,11 +406,88 @@
       }
     },
     {
+      "slug": "shuto-express-84",
+      "url": "https://davuses.github.io/shuto-express-84/",
+      "path": "/shuto-express-84/",
+      "title": "Shuto Express '84 — 80s Tokyo City-Pop Album",
+      "raw_title": "Shuto Express '84 — 80s Tokyo City-Pop Album",
+      "description": "Shuto Express '84 — Six glossy 1980s Tokyo City-Pop instrumentals crafted in OpenBand Studio with slap bass, DX7 electric pianos, brass stabs, shimmering guitars, and late-night tenor sax (6 PM to 2 AM).",
+      "image": "https://davuses.github.io/shuto-express-84/cover.jpg",
+      "theme_color": "#ec4899",
+      "og_type": "music.album",
+      "kind": "album",
+      "category": "music",
+      "source": "repository",
+      "repository": "https://github.com/davuses/shuto-express-84",
+      "language": "JavaScript",
+      "topics": [],
+      "pushed_at": "2026-11-25T23:58:01Z",
+      "first_seen": "2026-11-25",
+      "last_seen": "2026-11-25",
+      "http_status": 200,
+      "pages_status": "built",
+      "status": "published",
+      "album": {
+        "track_count": 6,
+        "duration": "11:26",
+        "bpm_range": "104–122 BPM",
+        "arc": "6 PM → 2 AM",
+        "cover": "https://davuses.github.io/shuto-express-84/cover.jpg",
+        "preview_track": 3,
+        "preview_title": "Aoyama Rain on Glass",
+        "preview_audio": "/shuto-express-84/audio/03_Aoyama_Rain_on_Glass_10PM.mp3",
+        "tracks": [
+          {
+            "num": 1,
+            "title": "Bayshore Twilight (6 PM)",
+            "bpm": 116,
+            "key": "Eb",
+            "audio": "/shuto-express-84/audio/01_Bayshore_Twilight_6PM.mp3"
+          },
+          {
+            "num": 2,
+            "title": "Ginza Neon Escalator (8 PM)",
+            "bpm": 120,
+            "key": "F",
+            "audio": "/shuto-express-84/audio/02_Ginza_Neon_Escalator_8PM.mp3"
+          },
+          {
+            "num": 3,
+            "title": "Aoyama Rain on Glass (10 PM)",
+            "bpm": 104,
+            "key": "Ab",
+            "audio": "/shuto-express-84/audio/03_Aoyama_Rain_on_Glass_10PM.mp3"
+          },
+          {
+            "num": 4,
+            "title": "Shibuya Midnight Arcade (11 PM)",
+            "bpm": 122,
+            "key": "Gm",
+            "audio": "/shuto-express-84/audio/04_Shibuya_Midnight_Arcade_11PM.mp3"
+          },
+          {
+            "num": 5,
+            "title": "Odaiba Ferry Deck (1 AM)",
+            "bpm": 112,
+            "key": "Db",
+            "audio": "/shuto-express-84/audio/05_Odaiba_Ferry_Deck_1AM.mp3"
+          },
+          {
+            "num": 6,
+            "title": "Rainbow Bridge Sunrise (2 AM)",
+            "bpm": 108,
+            "key": "C",
+            "audio": "/shuto-express-84/audio/06_Rainbow_Bridge_Sunrise_2AM.mp3"
+          }
+        ]
+      }
+    },
+    {
       "slug": "TurnRiver",
       "url": "https://davuses.github.io/TurnRiver/",
       "path": "/TurnRiver/",
-      "title": "TurnRiver — 6-Max Texas Hold'em Training Studio",
-      "raw_title": "TurnRiver — 6-Max Texas Hold'em Training Studio",
+      "title": "TurnRiver | 6-Max Texas Hold'em Training Studio",
+      "raw_title": "TurnRiver | 6-Max Texas Hold'em Training Studio",
       "description": "6-max 100bb Texas Hold'em training studio with preflop ranges, postflop decision drills, pot odds & call EV math, hand reading, and live table play.",
       "image": "",
       "theme_color": "",
@@ -421,7 +498,7 @@
       "repository": "https://github.com/davuses/TurnRiver",
       "language": "TypeScript",
       "topics": [],
-      "pushed_at": "2026-11-24T20:39:28Z",
+      "pushed_at": "2026-11-25T20:34:13Z",
       "first_seen": "2026-11-25",
       "last_seen": "2026-11-25",
       "http_status": 200,
