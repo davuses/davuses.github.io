@@ -218,6 +218,32 @@
       </div>
     </section>
 
+    <section class="section" aria-labelledby="directory-heading">
+      <div class="section-head"><div><h2 id="directory-heading" class="section-title">All published sites</h2><p class="section-sub">Automatically discovered public GitHub Pages projects and subsites.</p></div></div>
+      <div id="siteDirectory" class="repos-grid" aria-live="polite"><p>Loading site directory…</p></div>
+      <script>
+      (async function () {
+        const box = document.getElementById('siteDirectory');
+        try {
+          const response = await fetch('/sites.json', {cache:'no-cache'});
+          if (!response.ok) throw Error('Directory unavailable');
+          const sites = await response.json();
+          box.replaceChildren();
+          for (const site of sites.filter(s => s.status === 'discovered')) {
+            const a = document.createElement('a'); a.className='repo-card';
+            const url = new URL(site.url);
+            if (url.protocol !== 'https:' || url.hostname !== 'davuses.github.io') continue;
+            a.href=url.href;
+            const title=document.createElement('span'); title.className='repo-name'; title.textContent=site.title;
+            const desc=document.createElement('p'); desc.className='repo-desc'; desc.textContent=site.description || url.pathname;
+            a.append(title,desc); box.append(a);
+          }
+          if (!box.children.length) box.textContent='No sites discovered yet.';
+        } catch (e) { box.textContent='Automatic directory is temporarily unavailable. The featured links above remain available.'; }
+      })();
+      </script>
+    </section>
+
     <!-- Selected Non-Pages Repositories -->
     <section class="section repos-section" aria-labelledby="repos-heading">
       <div class="section-head compact-head">
