@@ -2,7 +2,7 @@
   "schema_version": 2,
   "owner": "davuses",
   "base_url": "https://davuses.github.io/",
-  "generated_at": "2026-11-26T07:52:34Z",
+  "generated_at": "2026-11-26T10:04:57Z",
   "discovery_warnings": [],
   "sites": [
     {
@@ -280,7 +280,7 @@
       "last_seen": "2026-11-26",
       "http_status": 200,
       "pages_status": "built",
-      "status": "published",
+      "status": "retired",
       "album": {
         "track_count": 1,
         "duration": "1:57",
