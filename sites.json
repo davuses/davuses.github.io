@@ -2,7 +2,7 @@
   "schema_version": 2,
   "owner": "davuses",
   "base_url": "https://davuses.github.io/",
-  "generated_at": "2026-11-26T10:04:57Z",
+  "generated_at": "2026-11-26T12:49:38Z",
   "discovery_warnings": [],
   "sites": [
     {
@@ -323,6 +323,83 @@
       "http_status": 200,
       "pages_status": "built",
       "status": "published"
+    },
+    {
+      "slug": "neon-expressway-85",
+      "url": "https://davuses.github.io/neon-expressway-85/",
+      "path": "/neon-expressway-85/",
+      "title": "Neon Expressway '85 — 80s Tokyo Synthwave Album",
+      "raw_title": "Neon Expressway '85 — 80s Tokyo Synthwave Album",
+      "description": "A 6-track 1980s Tokyo Synthwave & Synth-Pop concept album tracing one neon-lit night drive from 8 PM Bayshore twilight to 4 AM Rainbow Bridge dawn, powered by Surge XT & Dragonfly Reverb.",
+      "image": "https://davuses.github.io/neon-expressway-85/cover.jpg",
+      "theme_color": "#0d0b1a",
+      "og_type": "music.album",
+      "kind": "album",
+      "category": "music",
+      "source": "repository",
+      "repository": "https://github.com/davuses/neon-expressway-85",
+      "language": "JavaScript",
+      "topics": [],
+      "pushed_at": "2026-11-26T12:48:32Z",
+      "first_seen": "2026-11-26",
+      "last_seen": "2026-11-26",
+      "http_status": 200,
+      "pages_status": "built",
+      "status": "published",
+      "album": {
+        "track_count": 6,
+        "duration": "12:20",
+        "bpm_range": "92–112 BPM",
+        "arc": "8 PM → 4 AM",
+        "cover": "https://davuses.github.io/neon-expressway-85/cover.jpg",
+        "preview_track": 1,
+        "preview_title": "Neon Expressway '85",
+        "preview_audio": "/neon-expressway-85/audio/01_Neon_Expressway_85_8PM.mp3",
+        "tracks": [
+          {
+            "num": 1,
+            "title": "Neon Expressway '85 (8 PM)",
+            "bpm": 104,
+            "key": "Am",
+            "audio": "/neon-expressway-85/audio/01_Neon_Expressway_85_8PM.mp3"
+          },
+          {
+            "num": 2,
+            "title": "Ginza Rain & Chrome (9 PM)",
+            "bpm": 98,
+            "key": "Dm",
+            "audio": "/neon-expressway-85/audio/02_Ginza_Rain_and_Chrome_9PM.mp3"
+          },
+          {
+            "num": 3,
+            "title": "Shibuya Midnight Drive (11 PM)",
+            "bpm": 112,
+            "key": "Em",
+            "audio": "/neon-expressway-85/audio/03_Shibuya_Midnight_Drive_11PM.mp3"
+          },
+          {
+            "num": 4,
+            "title": "Roppongi Rooftop Tape (1 AM)",
+            "bpm": 94,
+            "key": "Cm",
+            "audio": "/neon-expressway-85/audio/04_Roppongi_Rooftop_Tape_1AM.mp3"
+          },
+          {
+            "num": 5,
+            "title": "Odaiba Bay Reflections (2 AM)",
+            "bpm": 108,
+            "key": "Gm",
+            "audio": "/neon-expressway-85/audio/05_Odaiba_Bay_Reflections_2AM.mp3"
+          },
+          {
+            "num": 6,
+            "title": "Rainbow Bridge Dawn (4 AM)",
+            "bpm": 92,
+            "key": "F",
+            "audio": "/neon-expressway-85/audio/06_Rainbow_Bridge_Dawn_4AM.mp3"
+          }
+        ]
+      }
     },
     {
       "slug": "one-law",
