@@ -2,7 +2,7 @@
   "schema_version": 2,
   "owner": "davuses",
   "base_url": "https://davuses.github.io/",
-  "generated_at": "2026-11-26T02:49:38Z",
+  "generated_at": "2026-11-26T07:52:34Z",
   "discovery_warnings": [],
   "sites": [
     {
@@ -255,6 +255,48 @@
             "bpm": 72,
             "key": "C",
             "audio": "/maple-and-lanterns/audio/06_Lanterns_Along_the_River_11PM.mp3"
+          }
+        ]
+      }
+    },
+    {
+      "slug": "midnight-wangan",
+      "url": "https://davuses.github.io/midnight-wangan/",
+      "path": "/midnight-wangan/",
+      "title": "Midnight Wangan — 80s Tokyo City-Pop Single",
+      "raw_title": "Midnight Wangan — 80s Tokyo City-Pop Single",
+      "description": "Midnight Wangan — Hand-crafted 118 BPM 1980s Tokyo City-Pop single built purely on OpenBand Studio's warm native synths: DX velvet Rhodes, funk electric bass, sparkling 16th-note pluck chops, soaring analog lead, and disco strings.",
+      "image": "https://davuses.github.io/midnight-wangan/cover.jpg",
+      "theme_color": "#ec4899",
+      "og_type": "music.album",
+      "kind": "album",
+      "category": "music",
+      "source": "repository",
+      "repository": "https://github.com/davuses/midnight-wangan",
+      "language": "JavaScript",
+      "topics": [],
+      "pushed_at": "2026-11-26T07:51:47Z",
+      "first_seen": "2026-11-26",
+      "last_seen": "2026-11-26",
+      "http_status": 200,
+      "pages_status": "built",
+      "status": "published",
+      "album": {
+        "track_count": 1,
+        "duration": "1:57",
+        "bpm_range": "118 BPM",
+        "arc": "",
+        "cover": "https://davuses.github.io/midnight-wangan/cover.jpg",
+        "preview_track": 1,
+        "preview_title": "Midnight Wangan",
+        "preview_audio": "/midnight-wangan/audio/01_Midnight_Wangan.mp3",
+        "tracks": [
+          {
+            "num": 1,
+            "title": "Midnight Wangan (11 PM)",
+            "bpm": 118,
+            "key": "F",
+            "audio": "/midnight-wangan/audio/01_Midnight_Wangan.mp3"
           }
         ]
       }
