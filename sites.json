@@ -2,7 +2,7 @@
   "schema_version": 2,
   "owner": "davuses",
   "base_url": "https://davuses.github.io/",
-  "generated_at": "2026-11-26T16:42:50Z",
+  "generated_at": "2026-11-26T22:48:49Z",
   "discovery_warnings": [],
   "sites": [
     {
@@ -181,6 +181,29 @@
           }
         ]
       }
+    },
+    {
+      "slug": "lever-not-a-compass",
+      "url": "https://davuses.github.io/lever-not-a-compass/",
+      "path": "/lever-not-a-compass/",
+      "title": "How to Thrive in the Age of Intelligence — Illustrative Film",
+      "raw_title": "How to Thrive in the Age of Intelligence — Illustrative Film",
+      "description": "An animated illustrative explainer film exploring the principles of thriving in the Age of Intelligence: judgment, productive friction, ownership, reality, and human worth.",
+      "image": "",
+      "theme_color": "",
+      "og_type": "website",
+      "kind": "site",
+      "category": "apps",
+      "source": "subsite",
+      "repository": "https://github.com/davuses/davuses.github.io",
+      "language": "HTML",
+      "topics": [],
+      "pushed_at": "",
+      "first_seen": "2026-11-26",
+      "last_seen": "2026-11-26",
+      "http_status": 200,
+      "pages_status": "built",
+      "status": "published"
     },
     {
       "slug": "maple-and-lanterns",
@@ -617,7 +640,7 @@
       "repository": "https://github.com/davuses/TurnRiver",
       "language": "TypeScript",
       "topics": [],
-      "pushed_at": "2026-11-26T15:58:03Z",
+      "pushed_at": "2026-11-26T22:32:33Z",
       "first_seen": "2026-11-25",
       "last_seen": "2026-11-26",
       "http_status": 200,
