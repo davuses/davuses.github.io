@@ -224,7 +224,12 @@
     return card;
   }
 
-  function renderFeaturedMusicCard(groupCfg, members, extraAlbumCount) {
+  function shortAlbumTitle(rawTitle) {
+    if (!rawTitle) return 'Album';
+    return String(rawTitle).split(/\s+[—–]\s+/)[0].trim();
+  }
+
+  function renderFeaturedMusicCard(groupCfg, members) {
     const card = el('article', 'page-card music-feature');
     card.dataset.category = groupCfg.category || 'music';
     card.dataset.kind = 'featured';
@@ -232,12 +237,12 @@
     const copy = el('div', 'music-feature-copy');
     const top = el('div', 'music-feature-top');
     top.append(
-      el('span', 'music-badge', groupCfg.badge || 'MUSIC · OPENBAND CONCEPT SERIES'),
+      el('span', 'music-badge', groupCfg.badge || 'MUSIC · OPENBAND RELEASES'),
       el('span', 'music-path', groupCfg.path || '/music/')
     );
 
     const titleEl = el('h3', 'card-title');
-    const titleLink = el('a', null, groupCfg.title || 'Seasonal Tapes');
+    const titleLink = el('a', null, groupCfg.title || 'Music & Concept Albums');
     titleLink.href = groupCfg.url || '/music/';
     titleEl.appendChild(titleLink);
 
@@ -245,10 +250,9 @@
       (sum, m) => sum + ((m.album && m.album.track_count) || 6),
       0
     );
-    const extraNote = extraAlbumCount > 0 ? ` · +${extraAlbumCount} more in hub` : '';
     const subtitleText =
       groupCfg.subtitle ||
-      `${members.length} Full-Day Concept Albums · ${totalTracks} Tracks · Live A/B Engine Player${extraNote}`;
+      `${members.length} Concept Albums · ${totalTracks} Tracks · OpenBand Studio`;
 
     const descEl = el('p', 'card-desc', groupCfg.description || '');
 
@@ -263,24 +267,29 @@
       const season = album.season || 'default';
       const chip = el('a', `btn-album ${season}-chip`);
       chip.href = toSiteHref(album);
-      chip.append(el('span', `dot ${season}-dot`), el('span', null, album.title));
+      const dot = el('span', `dot ${season}-dot`);
+      if (!album.season && album.theme_color) {
+        dot.style.background = '#ff4fa3';
+      }
+      chip.append(dot, el('span', null, shortAlbumTitle(album.title)));
       links.appendChild(chip);
     });
 
     copy.append(top, titleEl, el('p', 'card-subtitle', subtitleText), descEl, links);
 
     const covers = el('div', 'music-covers');
-    members.slice(0, 4).forEach((album, idx) => {
+    if (members.length > 4) covers.dataset.count = 'many';
+    members.slice(0, 6).forEach((album, idx) => {
       const a = el('a', 'mini-cover');
       a.href = toSiteHref(album);
-      a.setAttribute('aria-label', `Open ${album.title}`);
+      a.setAttribute('aria-label', `Open ${shortAlbumTitle(album.title)}`);
 
       const img = document.createElement('img');
       img.src = album.cover || album.image || `/${album.slug}/cover.jpg`;
-      img.alt = `${album.title} album cover`;
+      img.alt = `${shortAlbumTitle(album.title)} album cover`;
       img.loading = 'lazy';
 
-      const label = album.season_label || `Album · 0${idx + 1}`;
+      const label = album.season_label || `Release · 0${idx + 1}`;
       a.append(img, el('span', 'mini-cover-label', label));
       covers.appendChild(a);
     });
@@ -380,7 +389,9 @@
 
       const groupBuckets = {};
       const standaloneCards = [];
-      let extraMusicAlbums = 0;
+      const defaultMusicGroup = Object.keys(featuredGroups).find(
+        (id) => (featuredGroups[id].category || 'music') === 'music'
+      );
 
       published.forEach((site) => {
         if (site.group_hub && featuredGroups[site.group_hub]) {
@@ -391,8 +402,10 @@
           groupBuckets[site.group].push(site);
           return;
         }
-        if (site.kind === 'album') {
-          extraMusicAlbums += 1;
+        if (site.kind === 'album' && defaultMusicGroup) {
+          if (!groupBuckets[defaultMusicGroup]) groupBuckets[defaultMusicGroup] = [];
+          groupBuckets[defaultMusicGroup].push(site);
+          return;
         }
         standaloneCards.push(site);
       });
@@ -417,11 +430,13 @@
         .sort((a, b) => (a[1].order || 100) - (b[1].order || 100))
         .forEach(([groupId, groupCfg]) => {
           const members = (groupBuckets[groupId] || []).sort(
-            (a, b) => (a.order || 99) - (b.order || 99)
+            (a, b) =>
+              (typeof a.order === 'number' ? a.order : 99) - (typeof b.order === 'number' ? b.order : 99) ||
+              (b.pushed_at || b.first_seen || '').localeCompare(a.pushed_at || a.first_seen || '')
           );
           if (!members.length) return;
           presentCategories.add(groupCfg.category || 'music');
-          grid.appendChild(renderFeaturedMusicCard(groupCfg, members, extraMusicAlbums));
+          grid.appendChild(renderFeaturedMusicCard(groupCfg, members));
         });
 
       if (!grid.children.length) {

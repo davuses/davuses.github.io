@@ -609,6 +609,7 @@ html[data-theme="dark"] .banner-editorial .banner-tag {
   border: 1px solid var(--border);
   background: var(--surface-strong);
   color: var(--text);
+  white-space: nowrap;
 }
 
 .btn-album:hover { border-color: var(--border-hi); }
@@ -630,6 +631,19 @@ html[data-theme="dark"] .banner-editorial .banner-tag {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 12px;
+}
+
+.music-covers[data-count="many"] {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 10px;
+}
+
+.music-covers[data-count="many"] .mini-cover-label {
+  left: 7px;
+  bottom: 7px;
+  font-size: 9.5px;
+  padding: 2px 7px;
+  white-space: nowrap;
 }
 
 .mini-cover {
