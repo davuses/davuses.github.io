@@ -2,9 +2,86 @@
   "schema_version": 2,
   "owner": "davuses",
   "base_url": "https://davuses.github.io/",
-  "generated_at": "2026-11-27T00:34:02Z",
+  "generated_at": "2026-11-27T10:34:08Z",
   "discovery_warnings": [],
   "sites": [
+    {
+      "slug": "cloudport-chronicles",
+      "url": "https://davuses.github.io/cloudport-chronicles/",
+      "path": "/cloudport-chronicles/",
+      "title": "Cloudport Chronicles — Retro Cozy-Game OST",
+      "raw_title": "Cloudport Chronicles — Retro Cozy-Game OST",
+      "description": "A 6-track 1990s retro cozy-RPG original soundtrack tracing a sunlit sky-island journey from Title Screen music box waltz to Ending Credits, powered by Surge XT & Dragonfly Reverb.",
+      "image": "https://davuses.github.io/cloudport-chronicles/cover.jpg",
+      "theme_color": "#101828",
+      "og_type": "music.album",
+      "kind": "album",
+      "category": "music",
+      "source": "repository",
+      "repository": "https://github.com/davuses/cloudport-chronicles",
+      "language": "JavaScript",
+      "topics": [],
+      "pushed_at": "2026-11-27T10:33:07Z",
+      "first_seen": "2026-11-27",
+      "last_seen": "2026-11-27",
+      "http_status": 200,
+      "pages_status": "built",
+      "status": "published",
+      "album": {
+        "track_count": 6,
+        "duration": "13:56",
+        "bpm_range": "84–118 BPM",
+        "arc": "",
+        "cover": "https://davuses.github.io/cloudport-chronicles/cover.jpg",
+        "preview_track": 3,
+        "preview_title": "Breeze Over Clover",
+        "preview_audio": "/cloudport-chronicles/audio/03_Breeze_Over_Clover_Windmill_Plains.mp3",
+        "tracks": [
+          {
+            "num": 1,
+            "title": "Wind-Up Sky (Title Screen)",
+            "bpm": 96,
+            "key": "D",
+            "audio": "/cloudport-chronicles/audio/01_Wind_Up_Sky_Title_Screen.mp3"
+          },
+          {
+            "num": 2,
+            "title": "Cobblestone & Cider (Harbor Town)",
+            "bpm": 108,
+            "key": "G",
+            "audio": "/cloudport-chronicles/audio/02_Cobblestone_and_Cider_Harbor_Town.mp3"
+          },
+          {
+            "num": 3,
+            "title": "Breeze Over Clover (Windmill Plains)",
+            "bpm": 118,
+            "key": "A",
+            "audio": "/cloudport-chronicles/audio/03_Breeze_Over_Clover_Windmill_Plains.mp3"
+          },
+          {
+            "num": 4,
+            "title": "Starlight Astrolabe (Sunken Observatory)",
+            "bpm": 84,
+            "key": "E Lydian",
+            "audio": "/cloudport-chronicles/audio/04_Starlight_Astrolabe_Sunken_Observatory.mp3"
+          },
+          {
+            "num": 5,
+            "title": "Hearth & Ginger Tea (The Lantern Inn)",
+            "bpm": 86,
+            "key": "F",
+            "audio": "/cloudport-chronicles/audio/05_Hearth_and_Ginger_Tea_Lantern_Inn.mp3"
+          },
+          {
+            "num": 6,
+            "title": "Above the Clouds, Home (Ending Credits)",
+            "bpm": 98,
+            "key": "D",
+            "audio": "/cloudport-chronicles/audio/06_Above_the_Clouds_Home_Ending_Credits.mp3"
+          }
+        ]
+      }
+    },
     {
       "slug": "four-oclock-coast",
       "url": "https://davuses.github.io/four-oclock-coast/",
@@ -640,7 +717,7 @@
       "repository": "https://github.com/davuses/TurnRiver",
       "language": "TypeScript",
       "topics": [],
-      "pushed_at": "2026-11-26T22:32:33Z",
+      "pushed_at": "2026-11-27T10:31:07Z",
       "first_seen": "2026-11-25",
       "last_seen": "2026-11-27",
       "http_status": 200,
