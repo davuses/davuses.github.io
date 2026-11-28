@@ -2,8 +2,10 @@
   "schema_version": 2,
   "owner": "davuses",
   "base_url": "https://davuses.github.io/",
-  "generated_at": "2026-11-28T07:43:12Z",
-  "discovery_warnings": [],
+  "generated_at": "2026-11-28T16:51:15Z",
+  "discovery_warnings": [
+    "maple-and-lanterns: live URL returned HTTP 503"
+  ],
   "sites": [
     {
       "slug": "afterhours-0300",
@@ -378,9 +380,9 @@
       "pushed_at": "2026-11-24T13:59:57Z",
       "first_seen": "2026-11-25",
       "last_seen": "2026-11-28",
-      "http_status": 200,
+      "http_status": 503,
       "pages_status": "built",
-      "status": "published",
+      "status": "unreachable",
       "album": {
         "track_count": 6,
         "duration": "12:27",
@@ -434,7 +436,8 @@
             "audio": "/maple-and-lanterns/audio/06_Lanterns_Along_the_River_11PM.mp3"
           }
         ]
-      }
+      },
+      "last_checked": "2026-11-28"
     },
     {
       "slug": "midnight-wangan",
@@ -794,7 +797,7 @@
       "repository": "https://github.com/davuses/TurnRiver",
       "language": "TypeScript",
       "topics": [],
-      "pushed_at": "2026-11-28T03:19:04Z",
+      "pushed_at": "2026-11-28T13:02:05Z",
       "first_seen": "2026-11-25",
       "last_seen": "2026-11-28",
       "http_status": 200,
